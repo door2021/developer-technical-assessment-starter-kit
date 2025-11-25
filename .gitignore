@@ -1,7 +1,18 @@
 # compiled output
-/dist
-/node_modules
-/build
+Projects/backend/dist
+Projects/backend/node_modules
+Projects/backend/build
+
+Projects/frontend/node_modules
+Projects/frontend/build
+Projects/frontend/*.local
+Projects/frontend/dist
+Projects/frontend/dist-ssr
+Projects/frontend/*.njsproj
+Projects/frontend/*.ntvs*
+Projects/frontend/*.suo
+Projects/frontend/*.sw?
+Projects/frontend/*.sln
 
 # Logs
 logs
@@ -36,11 +47,11 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 # dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+Projects/backend/.env
+Projects/backend/.env.development.local
+Projects/backend/.env.test.local
+Projects/backend/.env.production.local
+Projects/backend/.env.local
 
 # temp directory
 .temp
@@ -52,5 +63,5 @@ pids
 *.seed
 *.pid.lock
 
-# Diagnostic reports (https://nodejs.org/api/report.html)
+# Diagnostic reports
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
