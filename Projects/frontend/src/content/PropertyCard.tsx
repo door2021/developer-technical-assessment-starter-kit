@@ -1,25 +1,27 @@
 import { Link } from "react-router-dom";
-import type { Property } from "../types/Property";
+import type { Property } from "../types/property";
 
-export default function PropertyCard({ item }: { item: Property }) {
+interface Props {
+  property: Property;
+}
+
+export default function PropertyCard({ property }: Props) {
   return (
-    <Link to={`/property/${item.id}`}>
-      <div style={{
-        padding: 16,
-        border: "1px solid #eee",
-        borderRadius: 8,
-        marginBottom: 20,
-        cursor: "pointer",
-        width: 300
-      }}>
-        <img 
-          src={item.image_urls[0]} 
-          alt={item.name} 
-          style={{ width: "100%", borderRadius: 8 }} 
-        />
-        <h3>{item.name}</h3>
-        <p>{item.location}</p>
-        <strong>${item.price.toLocaleString()}</strong>
+    <Link
+      to={`/property/${property.id}`}
+      className="bg-white rounded-lg shadow hover:shadow-lg transition block"
+    >
+      <img
+        src={property.image_urls[0]}
+        className="h-48 w-full object-cover rounded-t-lg"
+        alt={property.name}
+      />
+
+      <div className="p-4">
+        <h3 className="text-lg font-semibold">{property.name}</h3>
+        <p className="text-gray-600 text-sm">{property.location}</p>
+
+        <p className="mt-2 font-bold text-primary">${property.price.toLocaleString()}</p>
       </div>
     </Link>
   );
